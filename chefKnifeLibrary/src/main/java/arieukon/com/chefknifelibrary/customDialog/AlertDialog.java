@@ -58,12 +58,19 @@ public class AlertDialog {
                 mDialog.dismiss();
             }
         });
+
+        if (mDialog != null) {
+            mDialog.show();
+        }
     }
 
     public void show() {
         setupDialog();
-        if (mDialog != null) {
-            mDialog.show();
+    }
+
+    public void dismiss(){
+        if (mDialog != null && mDialog.isShowing()) {
+            mDialog.dismiss();
         }
     }
 

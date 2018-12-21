@@ -44,7 +44,7 @@ public class SampleDialogActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void showAlertDialog() {
-        AlertDialog dialog = new  AlertDialog(SampleDialogActivity.this);
+        final AlertDialog dialog = new  AlertDialog(SampleDialogActivity.this);
         dialog.setTitle("Hi Broo...");
         dialog.setMessage("Apa kabar ma bro?\n Kalau bisa besok kita ketemu");
         dialog.setButton("[x] Close");
@@ -58,6 +58,7 @@ public class SampleDialogActivity extends AppCompatActivity implements View.OnCl
         dialog.show(new AlertDialog.OnDialogDismissListener() {
             @Override
             public void onDismiss() {
+                dialog.dismiss();
                 MyToast.show(SampleDialogActivity.this, "Wow thanks you so much dude");
             }
         });
