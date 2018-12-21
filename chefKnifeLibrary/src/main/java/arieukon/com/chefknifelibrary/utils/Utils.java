@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by clappingape on 21/02/18.
+ * Created by arieukon on 21/02/18.
  */
 
 public class Utils {

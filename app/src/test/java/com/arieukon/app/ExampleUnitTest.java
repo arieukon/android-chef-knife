@@ -1,4 +1,4 @@
-package com.arieukon.chefknife;
+package com.arieukon.app;
 
 import org.junit.Test;
 
