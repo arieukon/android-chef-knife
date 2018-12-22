@@ -6,7 +6,7 @@ import android.widget.Toast;
 public class MyToast {
 
     public static void show(Context context, String message) {
-        android.widget.Toast.makeText(context, message, android.widget.Toast.LENGTH_SHORT).show();
+       Toast.makeText(context, message, android.widget.Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -15,6 +15,6 @@ public class MyToast {
      * @param type = [ MyToast.LENGTH_LONG or  MyToast.LENGTH_SHORT]
      */
     public static void show(Context context, String message, int type) {
-        android.widget.Toast.makeText(context, message, type).show();
+        Toast.makeText(context, message, type).show();
     }
 }

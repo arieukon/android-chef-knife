@@ -9,21 +9,22 @@ import android.widget.TextView;
 
 import arieukon.com.chefknifelibrary.R;
 
-public class AlertDialog {
+public class ConfirmationDialog {
 
     private Context mContext;
 
     private String title = "";
     private String message = "";
-    private String button = "";
+    private String positiveButton = "";
+    private String negativeButton = "";
     private boolean cancelable = true;
-    private int layout = R.layout.dialog_alert_chef_knife;
+    private int layout = R.layout.dialog_confirmation_chef_knife;
 
-    private OnDialogDismissListener mDismissListener;
+    private OnButtonClickListener mButtonClickListener;
 
     private Dialog mDialog;
 
-    public AlertDialog(Context context) {
+    public ConfirmationDialog(Context context) {
         mContext = context;
     }
 
@@ -35,7 +36,8 @@ public class AlertDialog {
 
         TextView tvTitle = (TextView) mDialog.findViewById(R.id.tv_title);
         TextView tvMessage = (TextView) mDialog.findViewById(R.id.tv_message);
-        Button btnPrimary = (Button) mDialog.findViewById(R.id.btn_primary);
+        Button btnPositive = (Button) mDialog.findViewById(R.id.btn_positive);
+        Button btnNegative = (Button) mDialog.findViewById(R.id.btn_negative);
 
         if (title.equals("")) {
             tvTitle.setVisibility(View.GONE);
@@ -45,19 +47,34 @@ public class AlertDialog {
             tvMessage.setVisibility(View.GONE);
         }
 
-        if (!button.equals("")) {
-            btnPrimary.setText(button);
+        if (!btnPositive.equals("")) {
+            btnPositive.setText(positiveButton);
+        }
+
+        if (!btnNegative.equals("")) {
+            btnNegative.setText(negativeButton);
         }
 
         tvTitle.setText(title);
         tvMessage.setText(message);
 
-        // if button is clicked, close the custom dialog
-        btnPrimary.setOnClickListener(new View.OnClickListener() {
+        // if positive button clicked
+        btnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDismissListener != null) {
-                    mDismissListener.onDismiss();
+                if (mButtonClickListener != null) {
+                    mButtonClickListener.onPositiveClicked();
+                }
+                mDialog.dismiss();
+            }
+        });
+
+        // if negative button clicked
+        btnNegative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mButtonClickListener != null) {
+                    mButtonClickListener.onNegativeClicked();
                 }
                 mDialog.dismiss();
             }
@@ -78,8 +95,8 @@ public class AlertDialog {
         }
     }
 
-    public void show(OnDialogDismissListener dismissListener) {
-        mDismissListener = dismissListener;
+    public void show(OnButtonClickListener buttonClickListener) {
+        mButtonClickListener = buttonClickListener;
         show();
     }
 
@@ -99,8 +116,20 @@ public class AlertDialog {
         this.message = message;
     }
 
-    public void setButton(String button) {
-        this.button = button;
+    public String getPositiveButton() {
+        return positiveButton;
+    }
+
+    public void setPositiveButton(String positiveButton) {
+        this.positiveButton = positiveButton;
+    }
+
+    public String getNegativeButton() {
+        return negativeButton;
+    }
+
+    public void setNegativeButton(String negativeButton) {
+        this.negativeButton = negativeButton;
     }
 
     public void setCancelable(boolean cancelable) {
@@ -123,8 +152,9 @@ public class AlertDialog {
     /**
      * Dialog Dismiss Listener
      */
-    public interface OnDialogDismissListener {
-        void onDismiss();
+    public interface OnButtonClickListener {
+        void onPositiveClicked();
+        void onNegativeClicked();
     }
 
     //endregion

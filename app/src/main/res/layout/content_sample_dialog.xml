@@ -18,28 +18,41 @@
             android:id="@+id/btn_alert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAllCaps="false"
             android:text="@string/alert_dialog"/>
 
-        <!--<Button-->
-            <!--android:id="@+id/btn_alert_with_listener"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:text="Alert Dialog With Listener"/>-->
+        <Button
+            android:id="@+id/btn_alert_with_listener"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:text="Alert Dialog With Listener"/>
 
-        <!--<Button-->
-            <!--android:id="@+id/btn_confirmation"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:text="Confirmation Dialog"/>-->
+        <Button
+            android:id="@+id/btn_confirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:text="Confirmation Dialog"/>
 
-        <!--<Button-->
-            <!--android:id="@+id/btn_confirmation_with_listener"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:text="Confirmation Dialog With Listener"/>-->
+        <Button
+            android:id="@+id/btn_confirmation_with_listener"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:text="Confirmation Dialog With Listener"/>
+
+        <Button
+            android:id="@+id/btn_check_connection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:text="Check Internet Connection"/>
+
 
     </LinearLayout>
 

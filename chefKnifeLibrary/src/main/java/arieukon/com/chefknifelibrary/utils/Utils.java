@@ -24,25 +24,6 @@ import java.util.Locale;
  */
 
 public class Utils {
-    /**
-     * Represent to show toast message with long duration
-     *
-     * @param context
-     * @param message
-     */
-    public static void showToastLong(Context context, CharSequence message) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-    }
-
-    /**
-     * Represent to show toast message with short duration
-     *
-     * @param context
-     * @param message
-     */
-    public static void showToastShort(Context context, CharSequence message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-    }
 
     /**
      * Response to get screen width of device
