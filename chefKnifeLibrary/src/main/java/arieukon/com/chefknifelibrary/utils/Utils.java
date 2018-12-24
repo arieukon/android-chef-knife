@@ -20,29 +20,10 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by clappingape on 21/02/18.
+ * Created by arieukon on 21/02/18.
  */
 
 public class Utils {
-    /**
-     * Represent to show toast message with long duration
-     *
-     * @param context
-     * @param message
-     */
-    public static void showToastLong(Context context, CharSequence message) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-    }
-
-    /**
-     * Represent to show toast message with short duration
-     *
-     * @param context
-     * @param message
-     */
-    public static void showToastShort(Context context, CharSequence message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-    }
 
     /**
      * Response to get screen width of device
